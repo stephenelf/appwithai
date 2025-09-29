@@ -1,6 +1,5 @@
 package com.stephenelf.mtgcardlister.presentation.card_details
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -15,10 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -43,7 +38,13 @@ data class CardDetails(
  * The main screen composable for displaying card details.
  */
 @Composable
-fun CardDetailScreen(details: CardDetails) {
+fun CardDetailScreen(details: CardDetails= CardDetails(
+    name = "Donthus, The Nurturer",
+    set = "Dominaria United",
+    type = "Creature",
+    rarity = "Rare",
+    description = "A powerful creature with unique abilities, capable of turning the tide of battle."
+), cardId: String? = "0") {
     // A standard scaffold provides the structure for the screen (TopBar, BottomBar, Content)
     Scaffold(
         topBar = { DetailTopBar() },

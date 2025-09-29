@@ -66,11 +66,13 @@ dependencies {
     implementation(libs.androidx.material3)
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.navigation.compose) // Use the latest version
 
 
 
     // Hilt
     implementation(libs.hilt.android)
+  //  implementation(libs.navigation.compose)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 

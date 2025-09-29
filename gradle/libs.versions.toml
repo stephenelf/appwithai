@@ -11,14 +11,17 @@ activityCompose = "1.10.1"
 composeBom = "2025.08.00"
 hiltPlugin = "2.57"
 hiltNavigationCompose = "1.2.0"
+navigationComposeVersion = "2.9.5"
 okhttp = "5.1.0"
 retrofit = "3.0.0"
 viewModelCompose = "2.9.2"
 loggingInterceptor = "5.1.0"
 converterGson = "3.0.0"
+navigationCompose = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationComposeVersion" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
 coil-network = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

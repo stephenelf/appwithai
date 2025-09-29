@@ -56,6 +56,7 @@ import com.stephenelf.mtgcardlister.ui.theme.BottomNavItemInactive
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CardListScreen(
+    onNavigateToDetails: (String) -> Unit, // Accept the callback for navigation
     viewModel: CardListViewModel = hiltViewModel() // Injects the ViewModel
 ) {
     val state = viewModel.state.collectAsState()
@@ -180,7 +181,10 @@ fun CardListScreen(
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 items(state.value.cards.take(5)) { card -> // Display first 5 cards as featured
-                    FeaturedCardItem(card = card)
+                    FeaturedCardItem(card = card,
+                        onClick = {
+                            onNavigateToDetails(card.id) // Call the lambda on click
+                        })
                 }
             }
 

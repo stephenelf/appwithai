@@ -2,9 +2,11 @@ package com.stephenelf.mtgcardlister.presentation.card_list.components
 
 
 import android.R.attr.contentDescription
+import android.R.attr.onClick
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -61,13 +63,15 @@ import com.stephenelf.mtgcardlister.ui.theme.TextLight
 @Composable
 fun FeaturedCardItem(
     card: Card,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier
             .width(280.dp) // Fixed width for featured cards
             .height(200.dp) // Fixed height
-            .padding(end = 16.dp),
+            .padding(end = 16.dp)
+            .clickable(onClick = onClick),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = SurfaceDark),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
